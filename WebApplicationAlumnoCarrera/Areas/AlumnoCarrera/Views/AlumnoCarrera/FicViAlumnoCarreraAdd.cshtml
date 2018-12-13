@@ -1,0 +1,153 @@
+﻿@model WebApplicationAlumnoCarrera.Models.eva_alumnos_carreras
+
+@{
+    ViewData["Title"] = "FicViAlumnoCarreraAdd";
+}
+
+<h2>FicViAlumnoCarreraAdd</h2>
+
+<h4>eva_alumnos_carreras</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="FicViAlumnoCarreraAdd">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdCarrera" class="control-label"></label>
+                <input asp-for="IdCarrera" class="form-control" />
+                <span asp-validation-for="IdCarrera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdAlumno" class="control-label"></label>
+                <input asp-for="IdAlumno" class="form-control" />
+                <span asp-validation-for="IdAlumno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdReticula" class="control-label"></label>
+                <input asp-for="IdReticula" class="form-control" />
+                <span asp-validation-for="IdReticula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEspecialidad" class="control-label"></label>
+                <input asp-for="IdEspecialidad" class="form-control" />
+                <span asp-validation-for="IdEspecialidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaIngreso" class="control-label"></label>
+                <input asp-for="FechaIngreso" class="form-control" />
+                <span asp-validation-for="FechaIngreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaEgreso" class="control-label"></label>
+                <input asp-for="FechaEgreso" class="form-control" />
+                <span asp-validation-for="FechaEgreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaTitulacion" class="control-label"></label>
+                <input asp-for="FechaTitulacion" class="form-control" />
+                <span asp-validation-for="FechaTitulacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaUltModSII" class="control-label"></label>
+                <input asp-for="FechaUltModSII" class="form-control" />
+                <span asp-validation-for="FechaUltModSII" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PromedioActual" class="control-label"></label>
+                <input asp-for="PromedioActual" class="form-control" />
+                <span asp-validation-for="PromedioActual" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PromedioPeriodoAnt" class="control-label"></label>
+                <input asp-for="PromedioPeriodoAnt" class="form-control" />
+                <span asp-validation-for="PromedioPeriodoAnt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PromedioFinal" class="control-label"></label>
+                <input asp-for="PromedioFinal" class="form-control" />
+                <span asp-validation-for="PromedioFinal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreditosAprobados" class="control-label"></label>
+                <input asp-for="CreditosAprobados" class="form-control" />
+                <span asp-validation-for="CreditosAprobados" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreditosCursados" class="control-label"></label>
+                <input asp-for="CreditosCursados" class="form-control" />
+                <span asp-validation-for="CreditosCursados" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPuntosVigentes" class="control-label"></label>
+                <input asp-for="TotalPuntosVigentes" class="form-control" />
+                <span asp-validation-for="TotalPuntosVigentes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPuntosGenerados" class="control-label"></label>
+                <input asp-for="TotalPuntosGenerados" class="form-control" />
+                <span asp-validation-for="TotalPuntosGenerados" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SemestreActual" class="control-label"></label>
+                <input asp-for="SemestreActual" class="form-control" />
+                <span asp-validation-for="SemestreActual" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdPeriodoIngreso" class="control-label"></label>
+                <input asp-for="IdPeriodoIngreso" class="form-control" />
+                <span asp-validation-for="IdPeriodoIngreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdPeriodoUltimo" class="control-label"></label>
+                <input asp-for="IdPeriodoUltimo" class="form-control" />
+                <span asp-validation-for="IdPeriodoUltimo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdPeriodoTitulacion" class="control-label"></label>
+                <input asp-for="IdPeriodoTitulacion" class="form-control" />
+                <span asp-validation-for="IdPeriodoTitulacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdGenPlanEstudio" class="control-label"></label>
+                <input asp-for="IdGenPlanEstudio" class="form-control" />
+                <span asp-validation-for="IdGenPlanEstudio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdGenOpcionTitulacion" class="control-label"></label>
+                <input asp-for="IdGenOpcionTitulacion" class="form-control" />
+                <span asp-validation-for="IdGenOpcionTitulacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdGenNivelEscolar" class="control-label"></label>
+                <input asp-for="IdGenNivelEscolar" class="form-control" />
+                <span asp-validation-for="IdGenNivelEscolar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdGenIngreso" class="control-label"></label>
+                <input asp-for="IdGenIngreso" class="form-control" />
+                <span asp-validation-for="IdGenIngreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activo" class="control-label"></label>
+                <input asp-for="Activo" class="form-control" />
+                <span asp-validation-for="Activo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Borrado" class="control-label"></label>
+                <input asp-for="Borrado" class="form-control" />
+                <span asp-validation-for="Borrado" class="text-danger"></span>
+            </div>            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="FicViAlumnoCarreraList">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

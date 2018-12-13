@@ -1,0 +1,216 @@
+﻿@model WebApplicationAlumnoCarrera.Models.eva_alumnos_carreras
+
+@{
+    ViewData["Title"] = "FicViAlumnoCarreraDetalle";
+}
+
+<h2>FicViAlumnoCarreraDetalle</h2>
+
+<div>
+    <h4>eva_alumnos_carreras</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdCarrera)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdCarrera)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdAlumno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdAlumno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdReticula)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdReticula)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdEspecialidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdEspecialidad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaIngreso)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaIngreso)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaEgreso)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaEgreso)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaTitulacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaTitulacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaUltModSII)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaUltModSII)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PromedioActual)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PromedioActual)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PromedioPeriodoAnt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PromedioPeriodoAnt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PromedioFinal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PromedioFinal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditosAprobados)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreditosAprobados)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditosCursados)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreditosCursados)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPuntosVigentes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalPuntosVigentes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPuntosGenerados)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalPuntosGenerados)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SemestreActual)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SemestreActual)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPeriodoIngreso)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdPeriodoIngreso)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPeriodoUltimo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdPeriodoUltimo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPeriodoTitulacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdPeriodoTitulacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTipoGenPlanEstudio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdTipoGenPlanEstudio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdGenPlanEstudio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdGenPlanEstudio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTipoGenOpcionTitulacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdTipoGenOpcionTitulacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdGenOpcionTitulacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdGenOpcionTitulacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTipoGenNivelEscolar)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdTipoGenNivelEscolar)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdGenNivelEscolar)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdGenNivelEscolar)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTipoGenIngreso)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdTipoGenIngreso)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdGenIngreso)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdGenIngreso)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Borrado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Borrado)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaReg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaReg)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioReg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioReg)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaUltMod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaUltMod)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioMod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioMod)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "FicViCatEdificiosUpdate", new { id = Model.IdAlumno  }) |
+    <a asp-action="FicViAlumnoCarreraList">Back to List</a>
+</div>
