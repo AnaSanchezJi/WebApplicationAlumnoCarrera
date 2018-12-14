@@ -13,14 +13,14 @@
         <form asp-action="FicViAlumnoCarreraUpdate">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="IdCarrera" class="control-label"></label>
-                <input asp-for="IdCarrera" class="form-control" />
-                <span asp-validation-for="IdCarrera" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="IdAlumno" class="control-label"></label>
                 <input asp-for="IdAlumno" class="form-control" />
                 <span asp-validation-for="IdAlumno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdCarrera" class="control-label"></label>
+                <input asp-for="IdCarrera" class="form-control" />
+                <span asp-validation-for="IdCarrera" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IdReticula" class="control-label"></label>
@@ -108,75 +108,29 @@
                 <span asp-validation-for="IdPeriodoTitulacion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IdTipoGenPlanEstudio" class="control-label"></label>
-                <input asp-for="IdTipoGenPlanEstudio" class="form-control" />
-                <span asp-validation-for="IdTipoGenPlanEstudio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="IdGenPlanEstudio" class="control-label"></label>
                 <input asp-for="IdGenPlanEstudio" class="form-control" />
                 <span asp-validation-for="IdGenPlanEstudio" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="IdTipoGenOpcionTitulacion" class="control-label"></label>
-                <input asp-for="IdTipoGenOpcionTitulacion" class="form-control" />
-                <span asp-validation-for="IdTipoGenOpcionTitulacion" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <label asp-for="IdGenOpcionTitulacion" class="control-label"></label>
                 <input asp-for="IdGenOpcionTitulacion" class="form-control" />
                 <span asp-validation-for="IdGenOpcionTitulacion" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="IdTipoGenNivelEscolar" class="control-label"></label>
-                <input asp-for="IdTipoGenNivelEscolar" class="form-control" />
-                <span asp-validation-for="IdTipoGenNivelEscolar" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <label asp-for="IdGenNivelEscolar" class="control-label"></label>
                 <input asp-for="IdGenNivelEscolar" class="form-control" />
                 <span asp-validation-for="IdGenNivelEscolar" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="IdTipoGenIngreso" class="control-label"></label>
-                <input asp-for="IdTipoGenIngreso" class="form-control" />
-                <span asp-validation-for="IdTipoGenIngreso" class="text-danger"></span>
-            </div>
+
             <div class="form-group">
                 <label asp-for="IdGenIngreso" class="control-label"></label>
                 <input asp-for="IdGenIngreso" class="form-control" />
                 <span asp-validation-for="IdGenIngreso" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Activo" class="control-label"></label>
-                <input asp-for="Activo" class="form-control" />
-                <span asp-validation-for="Activo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Borrado" class="control-label"></label>
-                <input asp-for="Borrado" class="form-control" />
-                <span asp-validation-for="Borrado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaReg" class="control-label"></label>
-                <input asp-for="FechaReg" class="form-control" />
-                <span asp-validation-for="FechaReg" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsuarioReg" class="control-label"></label>
-                <input asp-for="UsuarioReg" class="form-control" />
-                <span asp-validation-for="UsuarioReg" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaUltMod" class="control-label"></label>
-                <input asp-for="FechaUltMod" class="form-control" />
-                <span asp-validation-for="FechaUltMod" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsuarioMod" class="control-label"></label>
-                <input asp-for="UsuarioMod" class="form-control" />
-                <span asp-validation-for="UsuarioMod" class="text-danger"></span>
-            </div>
+            </div>            
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>

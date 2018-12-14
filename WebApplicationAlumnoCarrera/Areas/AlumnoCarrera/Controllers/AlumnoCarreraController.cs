@@ -55,7 +55,7 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Controllers
         }
         #endregion
         #region Editar edificio-------------------------------------
-        public IActionResult FicViAlumnoCarreraUpdate(short id)
+        public IActionResult FicViAlumnoCarreraUpdate(Int32 id)
         {
             try
             {
@@ -104,6 +104,7 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Controllers
         }
         #endregion
         #region Eliminar Edificio----------------------------------------- 
+        
         public ActionResult FicViAlumnoCarreraDelete(short id)
         {
             if (id != null)

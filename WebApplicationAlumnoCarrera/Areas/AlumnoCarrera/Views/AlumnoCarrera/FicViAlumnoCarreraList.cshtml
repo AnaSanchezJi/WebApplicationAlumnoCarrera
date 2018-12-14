@@ -9,7 +9,8 @@
 <p>
     <a asp-action="FicViAlumnoCarreraAdd">Create New</a>
 </p>
-<table class="table">
+<input type="text" id="myInput" placeholder="Search .." title="Type in a name">
+<table class="table" id="myTable">
     <thead>
         <tr>
             <th>
@@ -85,9 +86,32 @@
                 @Html.DisplayFor(modelItem => item.SemestreActual)
             </td>
             <td>
-                @Html.ActionLink("Edit", "FicViAlumnoCarreraUpdate", new {id=item.IdAlumno}) |
-                @Html.ActionLink("Details", "FicViAlumnoCarreraDetalle", new { id=item.IdAlumno}) |
-                @Html.ActionLink("Delete", "FicViAlumnoCarreraDelete", new { id=item.IdAlumno })
+                @Html.ActionLink("Edit", "FicViAlumnoCarreraUpdate", new { id = item.IdAlumno }) |
+                @Html.ActionLink("Details", "FicViAlumnoCarreraDetalle", new { id = item.IdAlumno }) |
+                <!--@Html.ActionLink("Delete", "FicViAlumnoCarreraDelete",item.IdAlumno, new { onclick = "return confirm('Seguro?');" })-->
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal"
+                        data-whatever="item.IdAlumno">
+                    Delete
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Confirm Delete</h4>
+                            </div>
+                            <div class="modal-body">
+                                <h2 style="background-color:black;">¿Estas seguro de eliminar el registro?</h2>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                @Html.ActionLink("Delete", "FicViAlumnoCarreraDelete", new { id = item.IdAlumno })
+                                <!--<input type="submit" value="Delete" class="btn btn-danger" asp-action="FicViAlumnoCarreraDelete" asp-route-id="item.IdAlumno" />-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </td>
         </tr>
 }

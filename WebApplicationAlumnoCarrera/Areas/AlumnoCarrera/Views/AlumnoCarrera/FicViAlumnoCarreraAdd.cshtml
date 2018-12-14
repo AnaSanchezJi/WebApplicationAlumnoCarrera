@@ -13,35 +13,37 @@
         <form asp-action="FicViAlumnoCarreraAdd">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="IdCarrera" class="control-label"></label>                
-                @Html.DropDownList("IdCarrera", null, htmlAttributes: new { @class = "form-control" })                
-            </div>
-            <div class="form-group">
                 <label asp-for="IdAlumno" class="control-label"></label>
                 @Html.DropDownList("IdAlumno", null, htmlAttributes: new { @class = "form-control" })
             </div>
             <div class="form-group">
-                <label asp-for="IdReticula" class="control-label"></label>                
-                @Html.DropDownList("IdReticula", null, htmlAttributes: new { @class = "form-control" })                
+                <label asp-for="IdCarrera" class="control-label"></label>
+                @Html.DropDownList("IdCarrera", null, htmlAttributes: new { @class = "form-control" })
             </div>
             <div class="form-group">
-                <label asp-for="IdEspecialidad" class="control-label"></label>                
-                @Html.DropDownList("IdEspecialidad", null, htmlAttributes: new { @class = "form-control" })                
+                <label asp-for="IdReticula" class="control-label"></label>
+                @Html.DropDownList("IdReticula", null, htmlAttributes: new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEspecialidad" class="control-label"></label>
+                @Html.DropDownList("IdEspecialidad", null, htmlAttributes: new { @class = "form-control" })
             </div>
             <div class="form-group">
                 <label asp-for="FechaIngreso" class="control-label"></label>
-                <input asp-for="FechaIngreso" class="form-control" />
+                <input asp-for="FechaIngreso" class="form-control" id="fecIngreso" onfocusout="printMessage()" />
                 <span asp-validation-for="FechaIngreso" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FechaEgreso" class="control-label"></label>
-                <input asp-for="FechaEgreso" class="form-control" />
+                <input asp-for="FechaEgreso" class="form-control" id="fecEgreso" onfocusout="printMessage()" />
                 <span asp-validation-for="FechaEgreso" class="text-danger"></span>
+                <label id="fldFechaEgreso" class="text-danger" style="display:none;">Advertencia la fecha de egreso no puede ser menor a la de ingreso</label>
             </div>
             <div class="form-group">
                 <label asp-for="FechaTitulacion" class="control-label"></label>
-                <input asp-for="FechaTitulacion" class="form-control" />
+                <input asp-for="FechaTitulacion" class="form-control" id="fecTitulacion" onfocusout="printMessage()" />
                 <span asp-validation-for="FechaTitulacion" class="text-danger"></span>
+                <label id="fldFechaTitulacion" class="text-danger" style="display:none;">Advertencia la fecha de titulacion no puede ser menor a la de egreso</label>
             </div>
             <div class="form-group">
                 <label asp-for="FechaUltModSII" class="control-label"></label>
@@ -50,18 +52,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="PromedioActual" class="control-label"></label>
-                <input asp-for="PromedioActual" class="form-control" type ="number"  min="0" max="100"/>
+                <input asp-for="PromedioActual" class="form-control" type="number" min="0" max="100" />
                 <span asp-validation-for="PromedioActual" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PromedioPeriodoAnt" class="control-label"></label>
-                <input asp-for="PromedioPeriodoAnt" class="form-control" type ="number"  min="0" max="100" />
+                <input asp-for="PromedioPeriodoAnt" class="form-control" type="number" min="0" max="100" />
                 <span asp-validation-for="PromedioPeriodoAnt" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PromedioFinal" class="control-label"></label>
-                <input asp-for="PromedioFinal" class="form-control" type ="number"  min="0" max="100"/>
-                <span asp-validation-for="PromedioFinal" class="text-danger" ></span>
+                <input asp-for="PromedioFinal" class="form-control" type="number" min="0" max="100" />
+                <span asp-validation-for="PromedioFinal" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CreditosAprobados" class="control-label"></label>
@@ -89,45 +91,35 @@
                 <span asp-validation-for="SemestreActual" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IdPeriodoIngreso" class="control-label"></label>                
-                @Html.DropDownList("IdPeriodoIngreso", null, htmlAttributes: new { @class = "form-control" })                
+                <label asp-for="IdPeriodoIngreso" class="control-label"></label>
+                @Html.DropDownList("IdPeriodoIngreso", null, htmlAttributes: new { @class = "form-control" })
             </div>
             <div class="form-group">
-                <label asp-for="IdPeriodoUltimo" class="control-label"></label>                
+                <label asp-for="IdPeriodoUltimo" class="control-label"></label>
                 @Html.DropDownList("IdPeriodoUltimo", null, htmlAttributes: new { @class = "form-control" })
-                            </div>
+            </div>
             <div class="form-group">
-                <label asp-for="IdPeriodoTitulacion" class="control-label"></label>                
-                @Html.DropDownList("IdPeriodoTitulacion", null, htmlAttributes: new { @class = "form-control" })                
+                <label asp-for="IdPeriodoTitulacion" class="control-label"></label>
+                @Html.DropDownList("IdPeriodoTitulacion", null, htmlAttributes: new { @class = "form-control" })
             </div>
             <div class="form-group">
                 <label asp-for="IdGenPlanEstudio" class="control-label"></label>
                 @Html.DropDownList("IdGenPlanEstudio", null, htmlAttributes: new { @class = "form-control" })
             </div>
             <div class="form-group">
-                <label asp-for="IdGenOpcionTitulacion" class="control-label"></label>                
-                @Html.DropDownList("IdGenOpcionTitulacion", null, htmlAttributes: new { @class = "form-control" })                
+                <label asp-for="IdGenOpcionTitulacion" class="control-label"></label>
+                @Html.DropDownList("IdGenOpcionTitulacion", null, htmlAttributes: new { @class = "form-control" })
             </div>
             <div class="form-group">
-                <label asp-for="IdGenNivelEscolar" class="control-label"></label>                
-                @Html.DropDownList("IdGenNivelEscolar", null, htmlAttributes: new { @class = "form-control" })                
+                <label asp-for="IdGenNivelEscolar" class="control-label"></label>
+                @Html.DropDownList("IdGenNivelEscolar", null, htmlAttributes: new { @class = "form-control" })
             </div>
             <div class="form-group">
-                <label asp-for="IdGenIngreso" class="control-label"></label>                
-                @Html.DropDownList("IdGenIngreso", null, htmlAttributes: new { @class = "form-control" })                
-            </div>
+                <label asp-for="IdGenIngreso" class="control-label"></label>
+                @Html.DropDownList("IdGenIngreso", null, htmlAttributes: new { @class = "form-control" })
+            </div>           
             <div class="form-group">
-                <label asp-for="Activo" class="control-label"></label>
-                <input asp-for="Activo" class="form-control" />
-                <span asp-validation-for="Activo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Borrado" class="control-label"></label>
-                <input asp-for="Borrado" class="form-control" />
-                <span asp-validation-for="Borrado" class="text-danger"></span>
-            </div>            
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default" id="btnEnviar"/>
             </div>
         </form>
     </div>

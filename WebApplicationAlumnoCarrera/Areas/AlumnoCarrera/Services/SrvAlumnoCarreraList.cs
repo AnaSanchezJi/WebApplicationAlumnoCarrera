@@ -36,7 +36,7 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Services
         //Detallle Edificio 100%
         public async Task<eva_alumnos_carreras> FicGetDetailAlumnoCarrera(int id)
         {
-            HttpResponseMessage FicResponse = await this.FiClient.GetAsync("api/" + id);
+            HttpResponseMessage FicResponse = await this.FiClient.GetAsync("api/GetAlumnoCarrera/" + id);
             if (FicResponse.IsSuccessStatusCode)
             {
                 var FicRespuesta = await FicResponse.Content.ReadAsStringAsync();
@@ -56,16 +56,22 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Services
             return new detalle_AlumnoCarrera();
         }
         //Eliminar Edificio Pantalla modal -------------------------------------------------------------       
-        public async Task<string> FicAlumnoCarreraDelete(short id)
+        public async Task<string> FicAlumnoCarreraDelete(Int32 id)
         {
             HttpResponseMessage FicRespuesta = await this.FiClient.DeleteAsync("api/" + id);
-            return FicRespuesta.IsSuccessStatusCode ? "OK" : "ERROR";
+            if (FicRespuesta.IsSuccessStatusCode)
+            {
+                return "OK";
+            }
+            return "ERROR";
         }
         //Editar Combos con item -----------------------------------------------------------------------
         public async Task<eva_alumnos_carreras> FicAlumnoCarreraUpdate(eva_alumnos_carreras edificio)
         {
             edificio.FechaUltMod = DateTime.Now;
             edificio.UsuarioMod = "Paty";
+            edificio.Activo = "S";
+            edificio.Borrado = "N";
 
             var json = JsonConvert.SerializeObject(edificio);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -79,8 +85,7 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Services
         //Nuevo Edificio Validar fechas, alumno autocomplementable---------------------------------------       
         public async Task<eva_alumnos_carreras> FicAlumnoCarreraCreate(eva_alumnos_carreras edificio)
         {
-
-           edificio.IdTipoGenPlanEstudio = 25;
+            edificio.IdTipoGenPlanEstudio = 25;
             edificio.IdTipoGenOpcionTitulacion = 27;
             edificio.IdTipoGenNivelEscolar = 17;
             edificio.IdTipoGenIngreso = 28;
@@ -88,6 +93,8 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Services
             edificio.FechaUltMod = DateTime.Now;
             edificio.UsuarioReg = "Ana";
             edificio.UsuarioMod = "Ana";
+            edificio.Activo = "S";
+            edificio.Borrado = "N";
 
             var FicJson = JsonConvert.SerializeObject(edificio);
             var FiContent = new StringContent(FicJson, Encoding.UTF8, "application/json");

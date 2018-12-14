@@ -115,3 +115,73 @@ $.get(url, function (json) {
         targetDropdownG28.append($("<option value=" + json[i].IdGeneral + " >" + json[i].DesGeneral + "</option>"));
     }
 });
+
+var number = 1;
+var dateEgreso = document.getElementById("fecEgreso");
+var dateIngreso = document.getElementById("fecIngreso");
+var dateTitulacion = document.getElementById("fecTitulacion");
+var btEnviar = document.getElementById("btnEnviar");
+
+var fldFechaEgreso = document.getElementById("fldFechaEgreso");
+var fldFechaTitulacion = document.getElementById("fldFechaTitulacion");
+
+var fechaEgreso;
+var fechaIngreso;
+var fechaTitulacion;
+
+var IdAlumno;
+IdAlumno = document.getElementById("itemToDelete");
+
+
+function printMessage() {
+    fechaEgreso = new Date(dateEgreso.value.substring(0, 10));
+    fechaIngreso = new Date(dateIngreso.value.substring(0, 10));
+    fechaTitulacion = new Date(dateTitulacion.value.substring(0, 10));
+
+    console.log(dateEgreso.value.substring(0, 10));
+    console.log(dateIngreso.value.substring(0, 10));
+
+    if (fechaEgreso < fechaIngreso) {
+        btEnviar.style.display = "none";
+        fldFechaEgreso.style.display = "block";
+    }
+
+    if (fechaTitulacion < fechaEgreso) {
+        btEnviar.style.display = "none";
+        fldFechaTitulacion.style.display = "block";
+    }
+
+    if (fechaEgreso > fechaIngreso) {
+        fldFechaEgreso.style.display = "none";
+    }
+
+    if (fechaTitulacion > fechaEgreso) {
+        fldFechaTitulacion.style.display = "none";
+    }
+
+    if (fechaEgreso > fechaIngreso && fechaTitulacion > fechaEgreso) {
+        btEnviar.style.display = "block"; btEnviar.style.display = "block";
+    }
+
+}
+
+$(document).ready(function () {
+    $("#myInput").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
+
+var parameter;
+$("#deleteActionLink").on("click", function () {
+    //save your parameter in variable
+    parameter = $("#deleteActionLink").data("parameter");
+});
+
+function returnId() {
+    console.log('IdAlumno= ' + IdAlumno.value);
+    $('a').attr('asp-route-id', IdAlumno.value);
+    return IdAlumno.value;
+}
