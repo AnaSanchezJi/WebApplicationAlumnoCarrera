@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -78,6 +79,7 @@ namespace WebApplicationAlumnoCarrera.Models
         public string DesEspecialidad { get; set; }
     }
 
+  
     public class eva_cat_carreras
     {
         [Key]
@@ -87,14 +89,16 @@ namespace WebApplicationAlumnoCarrera.Models
         public string ClaveOficial { get; set; }
         public string DesCarrera { get; set; }
         public string Alias { get; set; }
+        public SelectList ListaCarrera { get; set; }
     }
 
     public class eva_alumnos_carreras
     {
         [Key]
-        [Required]
-        public Int16 IdCarrera { get; set; }
+        [Required]        
         public Int32 IdAlumno { get; set; }
+        public Int16 IdCarrera { get; set; }
+        public eva_cat_carreras eva_cat_carreras { get; set; }
         public Int32 IdReticula { get; set; }
         public Int16 IdEspecialidad { get; set; }
         public DateTime FechaIngreso { get; set; }

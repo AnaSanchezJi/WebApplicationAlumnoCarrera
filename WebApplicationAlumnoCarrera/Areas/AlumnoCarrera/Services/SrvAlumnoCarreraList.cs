@@ -33,6 +33,18 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Services
             }
             return new List<eva_alumnos_carreras>();
         }
+        //Lista Carreras
+        public async Task<List<eva_cat_carreras>> Carrera()
+        {
+            HttpResponseMessage FicResponse = await this.FiClient.GetAsync("api/GetAlumnoCarrera");
+            if (FicResponse.IsSuccessStatusCode)
+            {
+                var FicRespuesta = await FicResponse.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<eva_cat_carreras>>(FicRespuesta);
+
+            }
+            return new List<eva_cat_carreras>();
+        }
 
 
         //Detallle Edificio 100%
@@ -74,7 +86,8 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Services
         //Nuevo Edificio ------------------------------------------------------------------       
         public async Task<eva_alumnos_carreras> FicAlumnoCarreraCreate(eva_alumnos_carreras edificio)
         {
-            edificio.IdTipoGenPlanEstudio = 25;
+
+           edificio.IdTipoGenPlanEstudio = 25;
             edificio.IdTipoGenOpcionTitulacion = 27;
             edificio.IdTipoGenNivelEscolar = 17;
             edificio.IdTipoGenIngreso = 28;
@@ -82,7 +95,6 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Services
             edificio.FechaUltMod = DateTime.Now;
             edificio.UsuarioReg = "Ana";
             edificio.UsuarioMod = "Ana";
-
 
             var FicJson = JsonConvert.SerializeObject(edificio);
             var FiContent = new StringContent(FicJson, Encoding.UTF8, "application/json");
