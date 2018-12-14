@@ -22,31 +22,17 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Services
         }
 
         //Lista Edificio 100%
-        public async Task<List<eva_alumnos_carreras>> FicGetListAlumnoCarrera()
+        public async Task<List<list_AlumnoCarrera>> FicGetListAlumnoCarrera()
         {
-            HttpResponseMessage FicResponse = await this.FiClient.GetAsync("api/GetAlumnoCarrera");
+            HttpResponseMessage FicResponse = await this.FiClient.GetAsync("api/ListaAlumnoCarrera");
             if (FicResponse.IsSuccessStatusCode)
             {
                 var FicRespuesta = await FicResponse.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<List<eva_alumnos_carreras>>(FicRespuesta);
-
+                return JsonConvert.DeserializeObject<List<list_AlumnoCarrera>>(FicRespuesta);
             }
-            return new List<eva_alumnos_carreras>();
+            return new List<list_AlumnoCarrera>();
         }
-        //Lista Carreras
-        public async Task<List<eva_cat_carreras>> Carrera()
-        {
-            HttpResponseMessage FicResponse = await this.FiClient.GetAsync("api/GetAlumnoCarrera");
-            if (FicResponse.IsSuccessStatusCode)
-            {
-                var FicRespuesta = await FicResponse.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<List<eva_cat_carreras>>(FicRespuesta);
-
-            }
-            return new List<eva_cat_carreras>();
-        }
-
-
+              
         //Detallle Edificio 100%
         public async Task<eva_alumnos_carreras> FicGetDetailAlumnoCarrera(int id)
         {
@@ -58,16 +44,24 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Services
             }
             return new eva_alumnos_carreras();
         }
-
-        //Eliminar Edificio -----------------------------------------       
+        //Detalle 100%----------------------------------------------------------------------------------
+        public async Task<detalle_AlumnoCarrera> DetailAlumnoCarrera(int id)
+        {
+            HttpResponseMessage FicResponse = await this.FiClient.GetAsync("api/GetDetallesAlumnoCarrera/" + id);
+            if (FicResponse.IsSuccessStatusCode)
+            {
+                var FicRespuesta = await FicResponse.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<detalle_AlumnoCarrera>(FicRespuesta);
+            }
+            return new detalle_AlumnoCarrera();
+        }
+        //Eliminar Edificio Pantalla modal -------------------------------------------------------------       
         public async Task<string> FicAlumnoCarreraDelete(short id)
         {
             HttpResponseMessage FicRespuesta = await this.FiClient.DeleteAsync("api/" + id);
             return FicRespuesta.IsSuccessStatusCode ? "OK" : "ERROR";
         }
-
-
-        //Editar-------------------------------------------------------------------
+        //Editar Combos con item -----------------------------------------------------------------------
         public async Task<eva_alumnos_carreras> FicAlumnoCarreraUpdate(eva_alumnos_carreras edificio)
         {
             edificio.FechaUltMod = DateTime.Now;
@@ -82,8 +76,7 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Services
             }
             return null;
         }
-
-        //Nuevo Edificio ------------------------------------------------------------------       
+        //Nuevo Edificio Validar fechas, alumno autocomplementable---------------------------------------       
         public async Task<eva_alumnos_carreras> FicAlumnoCarreraCreate(eva_alumnos_carreras edificio)
         {
 

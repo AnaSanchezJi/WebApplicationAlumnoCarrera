@@ -13,7 +13,7 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Controllers
     public class AlumnoCarreraController : Controller
     {
         SrvAlumnoCarreraList FicService;
-        List<eva_alumnos_carreras> FicLista;
+        List<list_AlumnoCarrera> FicLista;
         eva_alumnos_carreras edi;
 
 
@@ -21,15 +21,15 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Controllers
         {
             FicService = new SrvAlumnoCarreraList();
         }
-       
-        //Lista Edificio-------------------------------------------
+
+
+        #region Lista Edificio-----------------------------------------
         public IActionResult FicViAlumnoCarreraList()
         {
             try
             {
                 FicService = new SrvAlumnoCarreraList();
                 FicLista = FicService.FicGetListAlumnoCarrera().Result;
-                ViewBag.Title = "Catalogo de alumnos";                
                 return View(FicLista);
             }
             catch (Exception e)
@@ -37,14 +37,14 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Controllers
                 throw;
             }
         }
-
-        #region //Detalle Edificio------------------------------------------
+        #endregion
+        #region Detalle Edificio----------------------------------------
         public IActionResult FicViAlumnoCarreraDetalle(int id)
         {
             try
             {
                 FicService = new SrvAlumnoCarreraList();
-                eva_alumnos_carreras FicLista = FicService.FicGetDetailAlumnoCarrera(id).Result;                
+                detalle_AlumnoCarrera FicLista = FicService.DetailAlumnoCarrera(id).Result;                
                 ViewBag.Title = "Detalle de alumnos";
                 return View(FicLista);
             }
@@ -77,7 +77,7 @@ namespace WebApplicationAlumnoCarrera.Areas.AlumnoCarrera.Controllers
             return RedirectToAction("FicViAlumnoCarreraList");
         }
         #endregion
-        #region Nuevo Edificio 
+        #region Nuevo Edificio -------------------------------
         public ActionResult FicViAlumnoCarreraAdd()
         {
             ViewBag.IdAlumno = new SelectList(new List<SelectListItem>(), "Text");

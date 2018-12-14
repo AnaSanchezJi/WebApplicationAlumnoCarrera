@@ -50,18 +50,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="PromedioActual" class="control-label"></label>
-                <input asp-for="PromedioActual" class="form-control" />
+                <input asp-for="PromedioActual" class="form-control" type ="number"  min="0" max="100"/>
                 <span asp-validation-for="PromedioActual" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PromedioPeriodoAnt" class="control-label"></label>
-                <input asp-for="PromedioPeriodoAnt" class="form-control" />
+                <input asp-for="PromedioPeriodoAnt" class="form-control" type ="number"  min="0" max="100" />
                 <span asp-validation-for="PromedioPeriodoAnt" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PromedioFinal" class="control-label"></label>
-                <input asp-for="PromedioFinal" class="form-control" />
-                <span asp-validation-for="PromedioFinal" class="text-danger"></span>
+                <input asp-for="PromedioFinal" class="form-control" type ="number"  min="0" max="100"/>
+                <span asp-validation-for="PromedioFinal" class="text-danger" ></span>
             </div>
             <div class="form-group">
                 <label asp-for="CreditosAprobados" class="control-label"></label>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebApplicationAlumnoCarrera.Models.eva_alumnos_carreras>
+﻿@model IEnumerable<WebApplicationAlumnoCarrera.Models.list_AlumnoCarrera>
 
 @{
     ViewData["Title"] = "FicViAlumnoCarreraList";
@@ -13,16 +13,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IdCarrera)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.IdAlumno)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdReticula)
+                @Html.DisplayNameFor(model => model.Nombre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdEspecialidad)
+                @Html.DisplayNameFor(model => model.ApPaterno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApMaterno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DesCarrera)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FechaIngreso)
@@ -34,82 +37,13 @@
                 @Html.DisplayNameFor(model => model.FechaTitulacion)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FechaUltModSII)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.PromedioActual)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PromedioPeriodoAnt)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PromedioFinal)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CreditosAprobados)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CreditosCursados)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalPuntosVigentes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalPuntosGenerados)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.SemestreActual)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdPeriodoIngreso)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdPeriodoUltimo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdPeriodoTitulacion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdTipoGenPlanEstudio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdGenPlanEstudio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdTipoGenOpcionTitulacion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdGenOpcionTitulacion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdTipoGenNivelEscolar)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdGenNivelEscolar)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdTipoGenIngreso)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdGenIngreso)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Activo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Borrado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaReg)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioReg)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaUltMod)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioMod)
             </th>
             <th></th>
         </tr>
@@ -118,16 +52,19 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IdCarrera)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.IdAlumno)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdReticula)
+                @Html.DisplayFor(modelItem => item.Nombre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdEspecialidad)
+                @Html.DisplayFor(modelItem => item.ApPaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApMaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesCarrera)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FechaIngreso)
@@ -139,87 +76,18 @@
                 @Html.DisplayFor(modelItem => item.FechaTitulacion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FechaUltModSII)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.PromedioActual)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PromedioPeriodoAnt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PromedioFinal)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreditosAprobados)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreditosCursados)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalPuntosVigentes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalPuntosGenerados)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.SemestreActual)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdPeriodoIngreso)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdPeriodoUltimo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdPeriodoTitulacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdTipoGenPlanEstudio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdGenPlanEstudio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdTipoGenOpcionTitulacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdGenOpcionTitulacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdTipoGenNivelEscolar)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdGenNivelEscolar)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdTipoGenIngreso)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdGenIngreso)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Activo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Borrado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaReg)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioReg)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaUltMod)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioMod)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "FicViAlumnoCarreraUpdate", new {  id=item.IdAlumno }) |
-                @Html.ActionLink("Details", "FicViAlumnoCarreraDetalle", new { id=item.IdAlumno }) |
-                @Html.ActionLink("Delete", "FicViAlumnoCarreraDelete", new {  id=item.IdAlumno })
+                @Html.ActionLink("Edit", "FicViAlumnoCarreraUpdate", new {id=item.IdAlumno}) |
+                @Html.ActionLink("Details", "FicViAlumnoCarreraDetalle", new { id=item.IdAlumno}) |
+                @Html.ActionLink("Delete", "FicViAlumnoCarreraDelete", new { id=item.IdAlumno })
             </td>
         </tr>
 }

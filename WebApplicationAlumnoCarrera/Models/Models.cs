@@ -131,4 +131,51 @@ namespace WebApplicationAlumnoCarrera.Models
         public DateTime FechaUltMod { get; set; }
         public String UsuarioMod { get; set; }
     }
+    public class detalle_AlumnoCarrera
+    {
+        [Key]
+        [Required]
+        public Int32 IdAlumno { get; set; }
+        public string Nombre { get; set; }
+        public string ApPaterno { get; set; }
+        public string ApMaterno { get; set; }
+        public string DesCarrera { get; set; }
+        public string DesReticula { get; set; }
+        public string DesEspecialidad { get; set; }
+        public DateTime FechaIngreso { get; set; }
+        public DateTime FechaEgreso { get; set; }
+        public DateTime FechaTitulacion { get; set; }
+        public DateTime FechaUltModSII { get; set; }
+        public Double PromedioActual { get; set; }
+        public Int32 PromedioPeriodoAnt { get; set; }
+        public Double PromedioFinal { get; set; }
+        public Double CreditosAprobados { get; set; }
+        public Double CreditosCursados { get; set; }
+        public Double TotalPuntosVigentes { get; set; }
+        public Double TotalPuntosGenerados { get; set; }
+        public Int16 SemestreActual { get; set; }
+        public string Activo { get; set; }
+        public string Borrado { get; set; }
+        public DateTime FechaReg { get; set; }
+        public string UsuarioReg { get; set; }
+        public DateTime FechaUltMod { get; set; }
+        public string UsuarioMod { get; set; }
+    }
+
+    public class list_AlumnoCarrera
+    {
+        [Key]
+        [Required]
+        public Int32 IdAlumno { get; set; }
+        public string Nombre { get; set; }
+        public string ApPaterno { get; set; }
+        public string ApMaterno { get; set; }
+        public string DesCarrera { get; set; }
+        public DateTime FechaIngreso { get; set; }
+        public DateTime FechaEgreso { get; set; }
+        public DateTime FechaTitulacion { get; set; }
+        public Double PromedioActual { get; set; }
+        public Double CreditosAprobados { get; set; }
+        public Int16 SemestreActual { get; set; }
+    }
 }
